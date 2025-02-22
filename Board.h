@@ -1,11 +1,12 @@
 #include <iostream>
+#include "Meteor.h"
 
 class Board {
     private :
         int width = 23 ;
         int height = 11 ;
     public :
-        void draw(int playerX, int playerY){
+        void draw(int playerX, int playerY, Meteor &meteor){
             system("cls");
             for (int i = 0; i < width; i++)
             {
@@ -28,7 +29,12 @@ class Board {
                         }
                         else
                         {
-                            std::cout << ' ' ;
+                            if (meteor.movement[i][j] == '@')
+                            {
+                                std::cout << '@' ;
+                            }
+                            else{std::cout << ' ' ;}
+                            //std::cout << ' ' ;
                         }
                         
                     }
