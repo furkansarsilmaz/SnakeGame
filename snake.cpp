@@ -17,7 +17,8 @@ int main(){
     {                                                  
         myboard.draw(myplayer.playerX, myplayer.playerY, mymeteor);
         myplayer.move();
-        Sleep(100);
+        mymeteor.eaten(&myplayer);
+        Sleep(50);
     }
     
     return 0 ;
