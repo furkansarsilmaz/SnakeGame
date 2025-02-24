@@ -12,11 +12,12 @@ class Meteor{
             movement[height][width] = '@' ;
         }
 
-        void eaten(Player* player){
+        void eaten(Player* player,int& playerPoint){
             if (player->playerX == width && player->playerY == height)
             {   
-                system("cls");
-                std::cout << "EATEN" ;
+                movement[height][width] = ' ' ;
+                create();
+                playerPoint += 1 ;
             }
         }
 };

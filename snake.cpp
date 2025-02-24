@@ -5,6 +5,7 @@
 #include "Board.h"
 #include "Meteor.h"
 
+int playerPoint = 0 ;
 bool gameOver = false ;
 
 int main(){
@@ -15,9 +16,9 @@ int main(){
     
     while (!gameOver)
     {                                                  
-        myboard.draw(myplayer.playerX, myplayer.playerY, mymeteor);
+        myboard.draw(myplayer.playerX, myplayer.playerY, mymeteor,playerPoint);
         myplayer.move();
-        mymeteor.eaten(&myplayer);
+        mymeteor.eaten(&myplayer,playerPoint);
         Sleep(50);
     }
     
