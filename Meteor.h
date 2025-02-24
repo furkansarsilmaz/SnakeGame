@@ -7,17 +7,13 @@ class Meteor{
         int width,height ;
     
         void create(){
+            movement[height][width] = ' ' ;
             width = ( rand() % 21  ) + 1 ;
             height = ( rand() % 10 ) + 1 ;
             movement[height][width] = '@' ;
         }
 
-        void eaten(Player* player,int& playerPoint){
-            if (player->playerX == width && player->playerY == height)
-            {   
-                movement[height][width] = ' ' ;
-                create();
-                playerPoint += 1 ;
-            }
+        bool eaten(Player* player){
+            return  (player->playerX == width && player->playerY == height) ;
         }
 };

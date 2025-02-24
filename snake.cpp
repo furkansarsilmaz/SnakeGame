@@ -18,7 +18,12 @@ int main(){
     {                                                  
         myboard.draw(myplayer.playerX, myplayer.playerY, mymeteor,playerPoint);
         myplayer.move();
-        mymeteor.eaten(&myplayer,playerPoint);
+
+        if(mymeteor.eaten(&myplayer) == true)
+        {
+            playerPoint++ ;
+            mymeteor.create();
+        }
         Sleep(50);
     }
     
