@@ -1,61 +1,36 @@
 #include <iostream>
-#include "Meteor.h"
+extern char grid [11][23] ;
 
-class Board {
-    private :
+class Board{
+    public:
         int width = 23 ;
         int height = 11 ;
-        
-    public :
-        void draw(int playerX, int playerY, Meteor &meteor, int playerPoint){
-            /*
-            draws the screen borders with for loops.
-            */
-            system("cls");
-            // Top section of the border
-            for (int i = 0; i < width; i++)
-            {
-                std::cout << '#' ;
-            }
-            std::cout << std::endl ;
 
-            // Body section of the border
+        Board(){
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
                 {
-                    if (j == 0 || j == 22)
+                    if (i == 0 || i == 10 || j == 0 || j == 22)
                     {
-                        std::cout << '#' ;
+                        grid[i][j] = '#' ;
                     }
-                    else
-                    {
-                        if (playerX == j && playerY == i)
-                        {
-                            std::cout << '*' ;
-                        }
-                        else
-                        {
-                            if (meteor.movement[i][j] == '@')
-                            {
-                                std::cout << '@' ;
-                            }
-                            else{std::cout << ' ' ;}
-                        }
-                        
-                    }
+                    else{ grid[i][j] = '.' ;}
                 }
-                std::cout << std::endl ; 
+                std::cout << std::endl ;
             }
             
-            // Bottom section of the border
-            for (int i = 0; i < width; i++)
+        }
+        
+        void draw(){
+            for (int i = 0; i < height; i++)
             {
-                std::cout << '#' ;
+                for (int j = 0; j < width; j++)
+                {
+                    std::cout << grid[i][j];
+                }
+                std::cout << std::endl ;
             }
-            // Point section of the border
-            std::cout << std::endl ;
-            std::cout << "#" << "  Player point : " << playerPoint << "   #" ;
             
         }
 };
