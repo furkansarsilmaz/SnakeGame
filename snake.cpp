@@ -5,6 +5,9 @@
 #include "Board.h"
 #include "Meteor.h"
 
+const int screenWidth = 23 ;
+const int screenHeight = 11 ;
+
 int playerPoint = 0 ;
 bool gameOver = false ;
 
@@ -23,6 +26,7 @@ int main(){
         {
             playerPoint++ ;
             mymeteor.create();
+            myplayer.grow();
         }
         Sleep(50);
     }

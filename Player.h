@@ -6,8 +6,12 @@ class Player{
         char symbol = '*';
 
     public:
-        int playerX = ( rand() % 10 ) + 1 ;
-        int playerY = ( rand() % 22 ) + 1 ;
+        int playerX, playerY ;
+        
+        Player(){
+            playerX = ( rand() % 10 ) + 1 ;
+            playerY = ( rand() % 22 ) + 1 ;
+        }
 
         void move(){
             int action = getch();
@@ -32,7 +36,6 @@ class Player{
             default:
                 break;
             }
-
         };
 
         void grow(){};

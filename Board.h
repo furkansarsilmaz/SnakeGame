@@ -5,6 +5,7 @@ class Board {
     private :
         int width = 23 ;
         int height = 11 ;
+        
     public :
         void draw(int playerX, int playerY, Meteor &meteor, int playerPoint){
             /*
@@ -40,7 +41,6 @@ class Board {
                                 std::cout << '@' ;
                             }
                             else{std::cout << ' ' ;}
-                            //std::cout << ' ' ;
                         }
                         
                     }
