@@ -9,6 +9,11 @@ char grid [11][23] ;
 int playerPoint = 0 ;
 bool gameOver = false ;
 
+void lose(){
+    system("cls");
+    std::cout << " YOU LOSE !!! " ;
+};
+
 int main(){
     Board myboard ;
     Player myplayer ;
@@ -17,8 +22,7 @@ int main(){
         myboard.draw();
         myplayer.move();
         myplayer.getMovement();
-        myplayer.checkPosition();
+        if ( gameOver = myplayer.checkPosition() ) lose();
     }
-    
     return 0 ;
 }

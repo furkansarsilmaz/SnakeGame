@@ -48,5 +48,8 @@ class Player{
             return grid[playerY][playerX] = head ;
         }
 
-        void checkPosition(){}
+        bool checkPosition(){
+            if (playerX <= 0 || playerX >= 22 || playerY <= 0 || playerY >= 10 ) return true ;
+            return false ;
+        }
 };
