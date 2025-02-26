@@ -15,7 +15,7 @@ class Board{
                     {
                         grid[i][j] = '#' ;
                     }
-                    else{ grid[i][j] = '.' ;}
+                    else{ grid[i][j] = ' ' ;}
                 }
                 std::cout << std::endl ;
             }
@@ -23,6 +23,7 @@ class Board{
         }
         
         void draw(){
+            system("cls");
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
