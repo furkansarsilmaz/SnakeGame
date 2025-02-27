@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "Board.h"
 #include "Player.h"
+#include "Meteor.h"
 
 // Globals
 char grid [11][23] ;
@@ -17,12 +18,27 @@ void lose(){
 int main(){
     Board myboard ;
     Player myplayer ;
+    Meteor mymeteor ;
+
+    mymeteor.create();
     while (!gameOver)
     {
         myboard.draw();
         myplayer.move();
         myplayer.getMovement();
-        if ( gameOver = myplayer.checkPosition() ) lose();
+        
+        
+        if ( mymeteor.eaten(myplayer) == true ) 
+        {
+            gameOver = true ;
+            lose() ;
+        }
+
+        if (myplayer.checkPosition() == true )
+        { 
+            gameOver = true ;
+            lose();
+        }
     }
     return 0 ;
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 extern char grid [11][23] ;
+#pragma once
 class Player{
     public:
         char head = 'o' ;
