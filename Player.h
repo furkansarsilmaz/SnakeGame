@@ -5,8 +5,11 @@ extern char grid [11][23] ;
 class Player{
     public:
         char head = 'o' ;
+        int tail = 0 ;
         int playerX = ( rand() % 20 ) ;
         int playerY = ( rand() % 9 ) ;
+        int tailX[100], tailY[100] ;
+
 
         void move(){
             /*
@@ -53,4 +56,23 @@ class Player{
             if (playerX <= 0 || playerX >= 22 || playerY <= 0 || playerY >= 10 ) return true ;
             return false ;
         }
+
+        void addTail(){
+            tail++ ;
+        }
+
+        void moveTail(){
+            /*
+                oyuncunun eski konumunu al ve kuyruğa ver
+            */
+            int y = playerY ;
+            int x = playerX ;
+           
+           for (int i = 0; i < tail ; i++)
+           {
+            grid[y][x] = head ;
+           }
+           
+        }
+
 };

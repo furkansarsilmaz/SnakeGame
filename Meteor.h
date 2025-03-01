@@ -8,8 +8,8 @@ class Meteor {
 
     char create()
     {
-        meteorX = rand() % 20 ;
-        meteorY = rand() % 9 ;
+        meteorX = rand() % 20 + 1 ;
+        meteorY = rand() % 9  + 1 ;
         return grid[meteorY][meteorX] = '@' ;
     }
 

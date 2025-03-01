@@ -24,14 +24,14 @@ int main(){
     while (!gameOver)
     {
         myboard.draw();
-        myplayer.move();
+        char action = myplayer.move();
         myplayer.getMovement();
-        
+        myplayer.moveTail( action );
         
         if ( mymeteor.eaten(myplayer) == true ) 
         {
-            gameOver = true ;
-            lose() ;
+            mymeteor.create();
+            myplayer.addTail();
         }
 
         if (myplayer.checkPosition() == true )

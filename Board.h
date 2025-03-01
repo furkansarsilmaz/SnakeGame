@@ -33,5 +33,7 @@ class Board{
                 std::cout << std::endl ;
             }
             
+            std::cout << "# " << " Player Point : " <<" #" ; 
+            
         }
 };
