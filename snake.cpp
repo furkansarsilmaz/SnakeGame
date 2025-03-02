@@ -4,6 +4,7 @@
 #include "Board.h"
 #include "Player.h"
 #include "Meteor.h"
+#include "Tail.h"
 
 // Globals
 char grid [11][23] ;
@@ -19,19 +20,23 @@ int main(){
     Board myboard ;
     Player myplayer ;
     Meteor mymeteor ;
+    Tail mytail ;
 
     mymeteor.create();
     while (!gameOver)
     {
         myboard.draw();
-        char action = myplayer.move();
+        int Xposition = myplayer.getPositionX();
+        int Yposition = myplayer.getPositionY();
+
+        myplayer.move();
+        mytail.moveTail(Xposition, Yposition);
         myplayer.getMovement();
-        myplayer.moveTail( action );
         
         if ( mymeteor.eaten(myplayer) == true ) 
         {
             mymeteor.create();
-            myplayer.addTail();
+            mytail.addTail();
         }
 
         if (myplayer.checkPosition() == true )
