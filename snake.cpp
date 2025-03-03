@@ -26,6 +26,7 @@ int main(){
     while (!gameOver)
     {
         myboard.draw();
+        
         int Xposition = myplayer.getPositionX();
         int Yposition = myplayer.getPositionY();
 
