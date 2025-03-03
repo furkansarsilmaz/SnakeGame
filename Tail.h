@@ -8,8 +8,8 @@ class Tail {
         char tail = 'o' ;
         int tailX [100] ;
         int tailY [100] ;
-        int prevTailX[100] ;
-        int prevTailY[100] ;
+        int prevtailX [100] ;
+        int prevtailY [100] ;
 
         void addTail()
         {
@@ -19,48 +19,49 @@ class Tail {
         void moveTail(int x, int y)
         /*
             With this function, our tail follows the head.
-            1- first loop it holds the previous coordinates.
-            2- Second loop tail moves and 
-            3- with the third loop draws the symbol of the tail.
+            1- first loop holds the previous coordinates.
+            2- Second loop moves the tail to previous coordinate 
+            3- third loop cleanse the symbol on the previous coordinate
+            4- fourth loop draws the symbol on the new coordinates
         */
         {
             if (tailQuant > 0 )
-            {
-                for ( int i = 0; i < tailQuant ; i++ )
+            {   
+                for(int i = 0 ; i < tailQuant ; i++)
                 {
-                    prevTailX[i] = tailX[i] ;
-                    prevTailY[i] = tailY[i] ;
+                    prevtailX[i] = tailX[i] ;
+                    prevtailY[i] = tailY[i] ;
                 }
 
-                for (int i = tailQuant - 1 ; i > 0 ; i--)
+                for (int i = tailQuant ; i > 0 ; i--)
                 {
                     tailX[i] = tailX[i-1] ;
                     tailY[i] = tailY[i-1] ;
                 }
                 
-                for (int i = 0; i < tailQuant; i++)
-                {
-                    grid [ prevTailY[i] ] [ prevTailX[i] ] = ' ' ;
-                }
-
+                
                 tailX[0] = x ;
                 tailY[0] = y ;
 
                 for (int i = 0; i < tailQuant; i++)
                 {
+                    grid[prevtailY[i]][prevtailX[i]] = ' ' ;
+                }
+
+                for (int i = 0; i < tailQuant; i++)
+                {
                     grid[ tailY[i] ][ tailX[i] ] = tail ;
                 }
-                
 
             }
             
         }
 
-        bool checkTail(Player &player)
+        bool checkTail(Player& player)
         {
             for (int i = 0 ; i < tailQuant ; i++)
             {
-                if (grid[tailY[i]][tailX[i]] == grid[player.playerY] [player.playerY])
+                if (tailX[i] == player.playerX && tailY[i] == player.playerY)
                 {
                     return true ;
                 }

@@ -48,10 +48,11 @@ int main(){
             lose();
         }
 
-        if (mytail.checkTail(myplayer))
+        if (mytail.checkTail(myplayer) == true)
         {
             gameOver = true ;
-            std::cout << "KUYRUK CARPTI" ;
+            std::cout << "KUYRUK CARPTI"<< std::endl ;
+            std::cout << mytail.tailQuant ;
         }
         
     }
