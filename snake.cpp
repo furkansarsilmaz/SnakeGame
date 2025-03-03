@@ -23,6 +23,8 @@ int main(){
     Tail mytail ;
 
     mymeteor.create();
+    myplayer.getHead();
+
     while (!gameOver)
     {
         myboard.draw();
@@ -31,8 +33,8 @@ int main(){
         int Yposition = myplayer.getPositionY();
 
         myplayer.move();
-        mytail.moveTail(Xposition, Yposition);
         myplayer.getMovement();
+        mytail.moveTail(Xposition, Yposition);
         
         if ( mymeteor.eaten(myplayer) == true ) 
         {
@@ -45,6 +47,13 @@ int main(){
             gameOver = true ;
             lose();
         }
+
+        if (mytail.checkTail(myplayer))
+        {
+            gameOver = true ;
+            std::cout << "KUYRUK CARPTI" ;
+        }
+        
     }
     return 0 ;
 }

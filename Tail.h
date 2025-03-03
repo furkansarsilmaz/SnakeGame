@@ -56,9 +56,16 @@ class Tail {
             
         }
 
-        bool checkTail()
+        bool checkTail(Player &player)
         {
-            
-            
+            for (int i = 0 ; i < tailQuant ; i++)
+            {
+                if (grid[tailY[i]][tailX[i]] == grid[player.playerY] [player.playerY])
+                {
+                    return true ;
+                }
+                
+            }
+            return false ;
         }
 };

@@ -1,12 +1,22 @@
 #include <iostream>
+#include <cstdlib>
 #include <conio.h>
 extern char grid [11][23] ;
 #pragma once
 class Player{
     public:
         char head = 'o' ;
-        int playerX = ( rand() % 20 ) ;
-        int playerY = ( rand() % 9 ) ;
+        int playerX ;
+        int playerY ;
+        
+
+        char getHead()
+        {
+            srand(time(NULL)) ;
+            playerX = ( rand() % 10 ) ;
+            playerY = ( rand() % 9 ) ;
+            return grid[playerY][playerX] = head ;
+        }
 
         void move(){
             /*
