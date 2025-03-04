@@ -11,7 +11,8 @@ char grid [11][23] ;
 int playerPoint = 0 ;
 bool gameOver = false ;
 
-void lose(){
+void lose()
+{
     system("cls");
     std::cout << " YOU LOSE !!! " ;
 };
@@ -34,7 +35,7 @@ int main(){
 
         myplayer.move();
         myplayer.getMovement();
-        mytail.moveTail(Xposition, Yposition);
+        mytail.moveTail( Xposition, Yposition);
         
         if ( mymeteor.eaten(myplayer) == true ) 
         {

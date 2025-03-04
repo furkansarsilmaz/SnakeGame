@@ -8,10 +8,20 @@ class Meteor {
         int meteorX, meteorY ;
     char create()
     {
+        bool creating = true ;
         srand(time(NULL)) ;
-        meteorX = rand() % 20 + 1 ;
-        meteorY = rand() % 9  + 1 ;
-        return grid[meteorY][meteorX] = '@' ;
+        while (creating)
+        {
+            meteorX = rand() % 20 + 1 ;
+            meteorY = rand() % 9 + 1 ;
+            if ( grid[meteorY][meteorX] == ' ')
+            {
+                return grid[meteorY][meteorX] = '@' ;
+                creating = false ;
+            }
+            
+        }
+
     }
 
     bool eaten(Player &player)
