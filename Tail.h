@@ -19,10 +19,10 @@ class Tail {
         void moveTail(int x, int y)
         /*
             With this function, our tail follows the head.
-            1- first loop holds the previous coordinates.
-            2- Second loop moves the tail to previous coordinate 
-            3- third loop cleanse the symbol on the previous coordinate
-            4- fourth loop draws the symbol on the new coordinates
+            first loop holds the previous coordinates.
+            Second loop moves the tail to previous coordinate 
+            third loop cleanse the symbol on the previous coordinate
+            fourth loop draws the symbol on the new coordinates
         */
         {
             if (tailQuant > 0 )
@@ -58,6 +58,10 @@ class Tail {
         }
 
         bool checkTail(Player& player)
+        /*
+            validates the coordinates of snake and the head
+            if they are same returns true , otherwise false.
+        */
         {
             for (int i = 0 ; i < tailQuant ; i++)
             {

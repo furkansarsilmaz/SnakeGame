@@ -3,7 +3,8 @@
 #include <conio.h>
 extern char grid [11][23] ;
 #pragma once
-class Player{
+
+class Player {
     public:
         char head = 'o' ;
         int playerX ;
@@ -13,9 +14,14 @@ class Player{
         char getHead()
         {
             srand(time(NULL)) ;
-            playerX = ( rand() % 10 ) ;
-            playerY = ( rand() % 9 ) ;
-            return grid[playerY][playerX] = head ;
+            bool position = true ;
+            while (position)
+            {
+                playerX = ( rand() % 10 ) ;
+                playerY = ( rand() % 9 ) ;
+                return grid[playerY][playerX] = head ;
+                position = false ;
+            }
         }
 
         void move(){

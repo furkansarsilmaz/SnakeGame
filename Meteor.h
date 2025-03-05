@@ -6,7 +6,15 @@ extern char grid [11][23] ;
 class Meteor {
     public :
         int meteorX, meteorY ;
+
     char create()
+    /*
+        with random function creates a coordinate
+        for fruit's and checks the coordinates.
+        If the coordinate is empty 
+        ( which means there is no edge '#' or snake 'o' ) 
+        assings the fruit to the that position.
+    */
     {
         bool creating = true ;
         srand(time(NULL)) ;
@@ -25,6 +33,10 @@ class Meteor {
     }
 
     bool eaten(Player &player)
+    /*
+        if the head position and the snake's position
+        equals returns true , otherwise false.
+    */
     {
        if ( player.playerX == meteorX && player.playerY == meteorY) 
        {

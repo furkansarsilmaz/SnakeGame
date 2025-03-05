@@ -14,7 +14,20 @@ bool gameOver = false ;
 void lose()
 {
     system("cls");
-    std::cout << " YOU LOSE !!! " ;
+    for (int i = 0; i < 10 ; i++)
+    {
+        std::cout << '#' ;
+    }
+    std::cout << std::endl ;
+    
+    std::cout << " YOU LOSE !!! " << std::endl ;
+
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << '#' ;
+    }
+    
+
 };
 
 int main(){
@@ -25,11 +38,9 @@ int main(){
 
     mymeteor.create();
     myplayer.getHead();
-
     while (!gameOver)
     {
-        myboard.draw();
-        
+        myboard.draw();        
         int Xposition = myplayer.getPositionX();
         int Yposition = myplayer.getPositionY();
 
@@ -52,8 +63,7 @@ int main(){
         if (mytail.checkTail(myplayer) == true)
         {
             gameOver = true ;
-            std::cout << "KUYRUK CARPTI"<< std::endl ;
-            std::cout << mytail.tailQuant ;
+            lose() ;
         }
         
     }

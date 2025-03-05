@@ -1,12 +1,16 @@
 #include <iostream>
 extern char grid [11][23] ;
 
-class Board{
+class Board {
     public:
         int width = 23 ;
         int height = 11 ;
 
         Board(){
+            /*
+                This constructor assings the symbols 
+                for the board with loops.
+            */
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
@@ -23,6 +27,9 @@ class Board{
         }
         
         void draw(){
+            /*
+                draws the vector with nested loops.
+            */
             system("cls");
             for (int i = 0; i < height; i++)
             {
@@ -33,7 +40,7 @@ class Board{
                 std::cout << std::endl ;
             }
             
-            std::cout << "# " << " Player Point : " <<" #" ; 
+            std::cout << "# " << " Player Point : " << " #" ; 
             
         }
 };
