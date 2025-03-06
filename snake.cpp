@@ -40,7 +40,7 @@ int main(){
     myplayer.getHead();
     while (!gameOver)
     {
-        myboard.draw();        
+        myboard.draw(playerPoint);        
         int Xposition = myplayer.getPositionX();
         int Yposition = myplayer.getPositionY();
 
@@ -50,6 +50,7 @@ int main(){
         
         if ( mymeteor.eaten(myplayer) == true ) 
         {
+            playerPoint += 10 ;
             mymeteor.create();
             mytail.addTail();
         }

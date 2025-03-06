@@ -26,7 +26,7 @@ class Board {
             
         }
         
-        void draw(){
+        void draw(int point){
             /*
                 draws the vector with nested loops.
             */
@@ -40,7 +40,7 @@ class Board {
                 std::cout << std::endl ;
             }
             
-            std::cout << "# " << " Player Point : " << " #" ; 
+            std::cout << "# " << " Player Point : " << point << " #" ; 
             
         }
 };

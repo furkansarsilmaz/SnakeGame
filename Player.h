@@ -6,7 +6,7 @@ extern char grid [11][23] ;
 
 class Player {
     public:
-        char head = 'o' ;
+        char head = 'O' ;
         int playerX ;
         int playerY ;
         
@@ -19,8 +19,11 @@ class Player {
             {
                 playerX = ( rand() % 10 ) ;
                 playerY = ( rand() % 9 ) ;
-                return grid[playerY][playerX] = head ;
-                position = false ;
+                if (grid[playerY][playerX] == ' ')
+                {
+                    return grid[playerY][playerX] = head ;    
+                    position = false ;
+                }
             }
         }
 
