@@ -25,6 +25,7 @@ class Player {
                     position = false ;
                 }
             }
+            return head ;
         }
 
         void move(){

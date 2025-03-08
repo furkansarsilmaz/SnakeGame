@@ -29,7 +29,7 @@ class Meteor {
             }
             
         }
-
+        return '@' ;
     }
 
     bool eaten(Player &player)

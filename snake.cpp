@@ -66,7 +66,7 @@ int main(){
             gameOver = true ;
             lose() ;
         }
-        
+        Sleep(100);
     }
     return 0 ;
 }
